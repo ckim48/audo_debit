@@ -30,6 +30,7 @@ gauth = GoogleAuth()
 drive = GoogleDrive(gauth)
 SCOPES = ['https://www.googleapis.com/auth/drive']
 CREDS_FILE = 'token.json'
+num = 1
 def authenticate():
     creds = None
     if os.path.exists('token.json'):
@@ -59,7 +60,7 @@ def upload_to_drive(pdf_path):
 @app.route('/save_image', methods=['POST'])
 def save_image():
     image_data_url = request.form['imageBase64']
-    print("AAAAAA"+image_data_url)
+    # print("AAAAAA"+image_data_url)
     image_data = image_data_url.split(',')[1]
 
     image = Image.open(BytesIO(base64.b64decode(image_data)))
@@ -77,18 +78,23 @@ def send_email(pdf_filename, recipient_email):
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = recipient_email
-    msg['Subject'] = '[한국 이주 노동 재단] 자동이체후원신청서'  # Replace with your email subject
+    msg['Subject'] = '[한국 이주 노동 재단] 자동이체후원신청서'
 
     body = '[한국 이주 노동 재단] 자동이체후원신청서'
     msg.attach(MIMEText(body, 'plain'))
 
-    filename = pdf_filename
-    attachment = open(filename, 'rb')
-    part = MIMEBase('application', 'octet-stream')
-    part.set_payload(attachment.read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', f"attachment; filename= {filename}")
-    msg.attach(part)
+    pdf_path = pdf_filename
+
+    try:
+        with open(pdf_path, 'rb') as attachment:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(attachment.read())
+            encoders.encode_base64(part)
+            part.add_header('Content-Disposition', f"attachment; filename= {pdf_filename}")
+            msg.attach(part)
+    except FileNotFoundError:
+        print(f"File '{pdf_filename}' not found in the specified folder.")
+        return
 
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp_server:
         smtp_server.starttls()
@@ -178,7 +184,9 @@ def index():
         # Convert HTML to PDF
         # pdf_data = pdfkit.from_string(rendered_html, False, options=pdf_options)
         # Save PDF to a file
-        pdf_filename = 'auto_debit_form_'+name+"_"+birth+'.pdf'
+        global num
+        pdf_filename = 'auto_debit_form_'+str(num)+"_"+birth+'.pdf'
+        num += 1
         # HTML(string=rendered_html).write_pdf(pdf_filename)
         custom_css = """
             table {
