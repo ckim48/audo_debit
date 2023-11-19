@@ -7,6 +7,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 from datetime import datetime
 import base64
+from weasyprint import HTML
+
 from PIL import Image
 from io import BytesIO
 from pydrive.auth import GoogleAuth
@@ -174,17 +176,18 @@ def index():
         }
 
         # Convert HTML to PDF
-        pdf_data = pdfkit.from_string(rendered_html, False, options=pdf_options)
-
+        # pdf_data = pdfkit.from_string(rendered_html, False, options=pdf_options)
         # Save PDF to a file
         pdf_filename = 'auto_debit_form_'+name+"_"+birth+'.pdf'
-        pdf_path = f"./{pdf_filename}"
-        with open(pdf_path, 'wb') as f:
-            f.write(pdf_data)
+        HTML(string=rendered_html).write_pdf(pdf_filename)
+
+        # pdf_path = f"./{pdf_filename}"
+        # with open(pdf_path, 'wb') as f:
+        #     f.write(pdf_data)
         send_email(pdf_filename, email)
         store = file.Storage('storage.json')
         creds = store.get
-        upload_to_drive(pdf_path)
+        upload_to_drive(pdf_filename)
         # Redirect user to the success page after saving PDF
         return redirect(url_for('success', filename=pdf_filename))
     else:
