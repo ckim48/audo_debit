@@ -7,7 +7,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 from datetime import datetime
 import base64
-from weasyprint import HTML
+from weasyprint import HTML, CSS
 
 from PIL import Image
 from io import BytesIO
@@ -179,8 +179,24 @@ def index():
         # pdf_data = pdfkit.from_string(rendered_html, False, options=pdf_options)
         # Save PDF to a file
         pdf_filename = 'auto_debit_form_'+name+"_"+birth+'.pdf'
-        HTML(string=rendered_html).write_pdf(pdf_filename)
-
+        # HTML(string=rendered_html).write_pdf(pdf_filename)
+        custom_css = """
+            table {
+                border-collapse: collapse; /* Ensure single borders for table cells */
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid black; /* Add borders to table cells */
+                padding: 8px;
+            }
+            @page {
+                margin: 8mm; /* Set margin for the entire page */
+            }
+            body {
+                font-size: 10px;
+            }
+        """
+        HTML(string=rendered_html).write_pdf(pdf_filename, stylesheets=[CSS(string=custom_css)])
         # pdf_path = f"./{pdf_filename}"
         # with open(pdf_path, 'wb') as f:
         #     f.write(pdf_data)
