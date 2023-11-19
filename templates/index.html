@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/korea_migration_foundation_donation_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Korea Migration Foundation Donation</title>
+</head>
+<body>
+    <div id="background"></div>
+
+    <div id="header_container">
+        <header>
+            <div id="deco1"></div>
+
+            <div id="company_name">
+                <h1>한국 이주 노동 재단</h1>
+            </div>
+
+            <div id="site_title">
+                <h1>멤버쉽 가입 및 정기후원 신청서</h1>
+            </div>
+
+            <div id="site_title_subtext">
+                <p>부디 적은 양이라도 괜찮으니 힘을 보태주세요. 여러 사람의 힘이 모이면 작은 힘도 커지는 법입니다.</p>
+            </div>
+
+            <div id="org_info">
+                <p>
+                    (재)한국이주노동재단
+                    <br>
+                    (មូលនិធិ) Korea Migration Foundation
+                    <br>
+                    연락처 : 031-797-2688
+                </p>
+            </div>
+
+            <div id="deco2"></div>
+        </header>
+    </div>
+
+    <section>
+        <div class="sidebar">
+            <div id="sticky_container">
+                <h1>연락처</h1>
+
+                <p>경기도 광주시 경안동 33-32</p>
+                <p>
+                    TEL : 031-797-2688
+                    <br>
+                    FAX : 031-797-3940
+                </p>
+                <p>
+                    nhv4825@yahoo.co.kr
+                    <br>
+                    대표자 : 안대환
+                </p>
+            </div>
+        </div>
+
+        <form action="/" method="POST">
+
+            <!-- Honeypot-->
+            <input type="text" name="_honey" style="display: none;">
+
+            <!-- Disable Captcha-->
+            <input type="hidden" name="_captcha" value="false">
+
+            <input type="hidden" name="_next" value="https://github.com/KOMF-Donations/KOMF_Donations/blob/main/success.html">
+
+            <div id="form_title_container">
+                <div id="deco3"></div>
+                <h1 id="form_title">회원 정보</h1>
+                <div id="deco4"></div>
+            </div>
+
+            <div class="form_block">
+                <h2>회원명 (ឈ្មោះសមាជិក / name)</h2>
+                <input name="name" placeholder="이름을 입력해주세요" style="width: calc(100% - 4px);">
+            </div>
+
+            <!--
+            <div class="form_block">
+                <h2>휴대전화 (ទូរស័ព្ទចល័ត)</h2>
+                <input name="phone_num1" style="width: calc(28% - 4px - 10%); margin-right: calc(10% - 4.5px);">
+                <input name="phone_num2" style="width: calc(36% - 4px - 5%); margin-right: calc(10% - 4.5px);">
+                <input name="phone_num3" style="width: calc(36% - 4px - 5%);">
+            </div>
+            -->
+            <div class="form_block">
+                <h2>휴대전화 (ទូរស័ព្ទចល័ត / Phone number)</h2>
+                <input name="phone_num1" style="width: calc(28% - 4px - 10%); margin-right: calc(10% - 4.5px);" value="010">
+                <input name="phone_num2" style="width: calc(36% - 4px - 5%); margin-right: calc(10% - 4.5px);">
+                <input name="phone_num3" style="width: calc(36% - 4px - 5%);">
+            </div>
+<!-- 납부자 이메일 추가 자동이체후원신청서는 있는데 여기는 없어서 추가함 -->
+            <div class="form_block">
+                <h2>회원이메일 (email)</h2>
+                <input name="member_email" placeholder="이메일을 입력해주세요" style="width: calc(100% - 4px);">
+            </div>
+
+            <div class="form_block">
+                <h2>생년월일 (ថ្ងៃខែឆ្នាំកំណើត / Date of Birth)</h2>
+                <input name="birth_year" placeholder="년도/Year" style="width: calc(30% - 4px - 5%); margin-right: calc(10% - 4.5px);">
+                <input name="birth_month" placeholder="월/Month" style="width: calc(40% - 4px - 10%); margin-right: calc(10% - 4.5px);">
+                <input name="birth_day" placeholder="일/Day" style="width: calc(30% - 4px - 5%);">
+            </div>
+            <div class="form_block">
+                <h2>주소 (address)</h2>
+                <input name="address" placeholder="주소를 입력해주세요" style="width: calc(100% - 4px);">
+            </div>
+            <div class="form_block">
+                <h2>납부유형 (ប្រភេទនៃការបង់ប្រាក់ / Type of Payment)</h2>
+                <input name="payment_type" placeholder="후원금 (ការបរិច្ចាគ/Donation)" style="width: calc(100% - 4px);">
+            </div>
+
+            <div class="form_block">
+                <h2>결제정보</h2>
+                <button id="one_time_payment" type="button" class="keep_pressed">일회성 결제 (ការទូទាត់តែម្តង/One-time Payment)</button>
+                <br>
+                <br>
+                <button id="periodic_payment" type="button" class="keep_pressed">정기결제 (ការទូទាត់ទៀងទាត់/Regular Payment)</button>
+            </div>
+
+            <div class="form_block">
+                <h2 style="margin-bottom: 0;">결제일 (매월) / កាលបរិច្ឆេទទូទាត់ប្រាក់ / Payment Date (ប្រចាំខែ/Every Month)</h2>
+                <p style="margin-top: 0; font-weight: 100; font-family: system-ui;">*정기 결제 선택시 (On Regular payment)</p>
+                <select id="payment_date" style="width: 100%;">
+                    <option value="none" selected disabled hidden class="select_default_option">날짜를 선택해주세요 (Select a date)</option>
+                    <option value="1일">1일</option>
+                    <option value="2일">2일</option>
+                    <option value="3일">3일</option>
+                    <option value="4일">4일</option>
+                    <option value="5일">5일</option>
+                    <option value="6일">6일</option>
+                    <option value="7일">7일</option>
+                    <option value="8일">8일</option>
+                    <option value="9일">9일</option>
+                    <option value="10일">10일</option>
+                    <option value="11일">11일</option>
+                    <option value="12일">12일</option>
+                    <option value="13일">13일</option>
+                    <option value="14일">14일</option>
+                    <option value="15일">15일</option>
+                    <option value="16일">16일</option>
+                    <option value="17일">17일</option>
+                    <option value="18일">18일</option>
+                    <option value="19일">19일</option>
+                    <option value="20일">20일</option>
+                    <option value="21일">21일</option>
+                    <option value="22일">22일</option>
+                    <option value="23일">23일</option>
+                    <option value="24일">24일</option>
+                    <option value="25일">25일</option>
+                    <option value="26일">26일</option>
+                    <option value="27일">27일</option>
+                    <option value="28일">28일</option>
+                    <option value="29일">29일</option>
+                    <option value="30일">30일</option>
+                    <option value="31일">31일</option>
+                </select>
+            </div>
+<!-- 납부기간 추가 자동이체후원신청서는 있는데 여기는 없어서 추가함 -->
+            <div class="form_block">
+                <h2>납부기간 (Payment Period)</h2>
+                <input name="Payment_yyyymmdd1" style="width: calc(28% - 4px - 10%); margin-right: calc(10% - 4.5px);" value="20230101";>
+                <input name="Payment_yyyymmdd2" style="width: calc(36% - 4px - 5%);">
+            </div>
+
+            <div class="form_block">
+                <h2>결제수단 (Payment Method)</h2>
+                <button id="payment_method" type="button" class="keep_pressed">자동이체 (ការផ្ទេរប្រាក់ដោយស្វ័យប្រវត្តិ/Automatic Transfer)</button>
+            </div>
+
+            <div class="form_block">
+                <h2>은행 (មោះធនាគារ / Bank)</h2>
+                <select name ="bank_name" id="bank" style="width: 100%;">
+                    <option value="none" selected disabled hidden>은행을 선택해주세요 (Select a bank)</option>
+                    <option value="KEB하나은행">KEB하나은행</option>
+                    <option value="SC제일은행">SC제일은행</option>
+                    <option value="국민은행">국민은행</option>
+                    <option value="신한은행">신한은행</option>
+                    <option value="외환은행">외환은행</option>
+                    <option value="우리은행">우리은행</option>
+                    <option value="한국시티은행">한국시티은행</option>
+                    <option value="경남은행">경남은행</option>
+                    <option value="광주은행">광주은행</option>
+                    <option value="대구은행">대구은행</option>
+                    <option value="부산은행">부산은행</option>
+                    <option value="전북은행">전북은행</option>
+                    <option value="제주은행">제주은행</option>
+                    <option value="기업은행">기업은행</option>
+                    <option value="농협">농협</option>
+                    <option value="수협">수협</option>
+                    <option value="한국산업은행">한국산업은행</option>
+                    <option value="한국수출입은행">한국수출입은행</option>
+                </select>
+            </div>
+
+            <div class="form_block">
+                <h2>예금주명 (ម្ចាស់គណនី / Account Owner)</h2>
+                <input name="account_owner" style="width: calc(100% - 4px);">
+            </div>
+
+            <div class="form_block">
+                <h2>계좌번호 (លេខគណនី / Bank Account)</h2>
+                <input name="account_num" style="width: calc(100% - 4px);">
+            </div>
+
+            <div class="form_block">
+                <h2>결제금액 (ចំនួនទឹកប្រាក់នៃការទូទាត់ / Amount of Money)</h2>
+
+              <button id="2k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%); margin-right: calc(7.5% - 5px);"onclick="setCustomWonValue('2000')">2,000원</button>
+                <button id="10k_won" type="button" class="keep_pressed" style="width: calc(34% - 5%); margin-right: calc(7.5% - 5px);"onclick="setCustomWonValue('10000')">10,000원</button>
+                <button id="50k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%);"onclick="setCustomWonValue('50000')">50,000원</button>
+
+<input name="custom_won" id="custom_won_input" placeholder="기타 금액 (원)" style="width: calc(100% - 4px); margin-top: 20px; border-color: rgb(89, 232, 89);">
+            </div>
+
+            <div class="form_block">
+                <h2 style="margin-bottom: 0;">결제동의정보 (ត៌មានកិច្ចព្រមព្រៀងការទូទាត់ / Agreement of Payment)</h2>
+                <input type="checkbox" id="agreement1" value="결제동의정보1">
+                <label for="agreement1"> 개인정보수집 및 이용,제공,위탁 에 동의 / ការយល់ព្រមចំពោះការប្រមូលព័ត៌មានផ្ទាល់ខ្លួន ការប្រើប្រាស់ ការផ្តល់ ការដឹកជញ្ជូន។ល។</label>
+                <br>
+                <input type="checkbox" id="agreement2" value="결제동의정보2">
+                <label for="agreement2"> 신청내역을 확인 및 매월 자동 결제에 동의 / បញ្ជាក់ព័ត៌មានលម្អិតអំពីកម្មវិធី និងយល់ព្រមលើការទូទាត់ប្រចាំខែដោយស្វ័យប្រវត្តិ</label>
+                <br>
+            </div>
+
+            <div class="form_block">
+                <h2>전자서명 (ហត្ថលេខាអេឡិចត្រូនិច / Signature)</h2>
+                <div id="drawing_area_container">
+                    <div class="drawing_board">
+                        <canvas id="drawing_board"></canvas>
+                            <input type="hidden" id="imageData" name="imageData">
+
+                    </div>
+                    <div id="toolbar">
+                        <button  type="button" id="submit_sign" >등록</button>
+
+                        <button style=" margin-top:20px;" type="button" id="clear">지우기</button>
+                    </div>
+                </div>
+                <p style="font-weight: bold; margin-top:130px;">한국이주노동재단의 전자동의(전자서명) 서비스입니다.(전자금융거래법시행)</p>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="form_block">
+                <button id="submit_button" type="submit">신청하기</button>
+                <button id="reset_button" type="button">다시 작성하기</button>
+            </div>
+        </form>
+    </section>
+    <script>
+            function setCustomWonValue(value) {
+            console.log(value);
+        document.getElementById('custom_won_input').value = value;
+    }
+
+    </script>
+    <script>
+    isSign = false;
+        $("#submit_sign").on("click", function(){
+    isSign = true;
+    var dataURL = canvas.toDataURL("image/png");
+    console.log(dataURL);
+    alert("전자서명이 등록되었습니다.");
+    $.ajax({
+        type: "POST",
+        url: "/save_image",
+        data: {
+            imageBase64: dataURL
+        },
+        success: function(response) {
+            console.log("Image saved successfully");
+        }
+    });
+});
+    </script>
+    <script src="../static/js/korea_migration_foundation_donation_script.js"></script>
+<script>
+</script>
+</body>
+</html>

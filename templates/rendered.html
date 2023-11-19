@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Korean">
+    <link rel="stylesheet" href="auto_debit_pay_form.css">
+    <title>자동이체후원신청서</title>
+</head>
+<body>
+    <p id="doc_title">자동이체후원신청서</p>
+
+    <div class="space_8"></div>
+
+    <p class="text_10" style="margin-left: 0.10cm;">&#9634;&nbsp;수납기관 및 요금 종류 </p>
+
+    <table style="width: 100%;" border ="1" cellspacing="0">
+        <tr align="center">
+            <td width="15%" align="center"><p class="text_10">수납기관명</p></td> 
+            <td><p class="text_10">재단법인한국이주재단</p></td>
+        </tr>
+        <tr align="center">
+            <td><p class="text_10">사업장주소</p></td>
+            <td><p class="text_10">경기도 광주시 경안로 25번길 7</p></td>
+        </tr>
+    </table>
+
+    <p class="text_10" style="margin-left: 0.10cm;">&#9634;&nbsp;출금이체 신청내용 (신청고객 기재란)</p>
+
+    <table style="width: 100%;" border ="1" cellspacing="0">
+        <tr align="center">
+            <td width="15%"><p class="text_10">신청인명</p></td>
+            <td width="30%"><p class="text_10">김창경</p></td>
+            <td width="20%"><p class="text_10">주민등록번호<br>(사업자등록번호)</p></td>
+            <td><p class="text_10">1205832679</p></td>
+        </tr>
+        <tr align="center">
+            <td align="center"><p class="text_10">후원금액</p></td>
+            <td align="center"><p class="text_10">매월 #원</p></td>
+            <td align="center"><p class="text_10">후원기간</p></td>
+            <td align="center"><p class="text_10">(매월 일)<br> 20230101 ~ 20231221</p></td>
+        </tr>
+        <tr align="center">
+            <td><p class="text_10">금융기관명</p></td>
+            <td><p class="text_10">우리은행</p></td>
+            <td><p class="text_10">출금계좌번호</p></td>
+            <td><p class="text_10">111-222-333333-9</p></td>
+        </tr>
+        <tr align="center">
+            <td><p class="text_10">출금계좌<br>예금주명</p></td>
+            <td><p class="text_10">김한국</p></td>
+            <td><p class="text_10">예금주와의 관계</p></td>
+            <td><p class="text_10">본인</p></td>
+        </tr>
+        <tr align="center">
+            <td><p class="text_10">신청인 주소</p></td>
+            <td colspan=3><p class="text_10">경기도 안산시 정정동 112-1 101호</p></td>
+        </tr>
+        <tr align="center">
+            <td><p class="text_10">신청인 연락처</p></td>
+            <td><p class="text_10">010-2006-9055</p></td>
+            <td><p class="text_10">신청인 E-mail</p></td>
+            <td><p class="text_10"></p></td>
+        </tr>
+    </table>
+
+    <p class="text_8">&#8251;한국이주노동재단은 공익성 기부금 대상 단체이며 기부금 영수증 발급이 가능하며, 연말정산 시 소득공제를 받을 수 있습니다.</p>
+
+    <div class="space_10"></div>
+
+    <table style="width: 100%;" border ="1" cellspacing="0">
+        <tr align="left">
+            <td>
+                <p class="text_8">
+                    [개인정보 수집 및 이용 동의]<br>
+                    &nbsp;- 수집 및 이용목적 : CMS 출금이체를 통한 요금수납<br>
+                    &nbsp;- 수집항목 : 성명, 전화번호, 휴대폰번호, 금융기관명, 계좌번호<br>
+                    &nbsp;- 보유 및 이용기간 : 수집, 이용 동의일로부터 CMS 출금이체 종료일(해지일) 후 5년까지<br>
+                    &nbsp;- 신청자는 개인정보 수집 및 이용을 거부할 권리가 있으며, 권리행사시 출금이체 신청이 거부될 수 있습니다.<br>
+                </p>
+                <p class="text_10" style="width: 100%; text-align: right;">동의함 &#9745;&nbsp; 동의안함 &#9744;&nbsp;</p>
+            </td>
+        </tr>
+        <tr align="left">
+            <td>
+                <p class="text_8">
+                    [개인정보 제3자 제공 동의]<br>
+                    &nbsp;- 개인정보를 제공받는 자 : 사단법인 금융결제원<br>
+                    &nbsp;- 개인정보를 제공받는 자의 개인정보 이용 목적<br>
+                    &nbsp;&nbsp;&nbsp;: CMS 출금이체 서비스 제공 및 출금동의 확인, 출금이체 신규등록 및 해지 사실 통지<br>
+                    &nbsp;- 제공하는 개인정보의 항목<br>
+                    &nbsp;&nbsp;&nbsp;: 성명, 금융기관명, 계좌번호, 생년월일, 전화번호, (은행 등 금융회사 및 이용기관 보유)휴대폰번호<br>
+                    &nbsp;- 개인정보를 제공받는 자의 개인정보 보유 및 이용기간<br>
+                    &nbsp;&nbsp;&nbsp;: CMS 출금이체 서비스 제공 및 출금동의 확인 목적을 달성할 때까지<br>
+                    &nbsp;- 신청자는 개인정보에 대해 금융결재원에 제공하는 것을 거부할 권리가 있으며, 거부시 출금이체 신청이 거부될 수 있습니다.
+                </p>
+                <p class="text_10" style="width: 100%; text-align: right;">동의함 &#9745;&nbsp; 동의안함 &#9744;&nbsp;</p>
+            </td>
+        </tr>
+    </table>
+
+    <p class="text_9">&nbsp;상기 금융거래정보의 제공 및 개인정보의 수집 및 이용, 제3자 제공에 동의하며 CMS 출금이체를 신청합니다.</p>
+
+    <div class="space_10"></div>
+
+    <p class="text_10" style="margin: 0.10cm auto 0 auto; text-indent: 1.50cm;">####년 ##월 ##일</p>
+
+    <div class="space_10"></div>
+
+<!--    <p class="text_10" style="width: 100%; text-align: right;">신청인:<img src="images/fig2.jpg" style="width:2.00cm; height:1.00cm;">인 또는 서명</p>-->
+    <!--<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Jon_Kirsch%27s_Signature.png" style="width:150cm; height:80cm; float: left;"></p>-->
+
+    <div class="space_10"></div>
+    
+    <p class="text_9">
+        [출금이체 동의여부 및 해지사실 통지 안내]<br>
+        금융기관 및 금융결재원은 CMS 제도의 안정적 운영을 위해 고객의 연락처 정보를 활용하여 유·무선 등으로 고객의 출금이체 동의여부 및 해지사실을 통지할 수 있습니다.
+    </p>
+
+    <div class="space_9"></div>
+
+    <p class="text_9">
+        주) 1. 인감 또는 서명은 해당 예금계좌 사용인감 또는 서명을 날인하여야 합니다.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 2. 기존 신청내용을 변경하고자 하는 경우에는 먼저 해지신청을 하고 신규 작성을 하여야 합니다.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; 3. 주계약자와 예금주가 다른 경우 반드시 예금주의 별도 서명을 받아야 합니다.
+    </p>
+
+    <div class="space_10"></div>
+    
+    <p class="text_10" style="margin: 0.10cm auto 0 auto;">후원문의&nbsp;&nbsp;&nbsp;TEL 031-797-2688&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX 05053333940&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail  nhv4825@naver.com</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <script src="auto_debit_pay_form.js"></script>
+</body>
+</html>

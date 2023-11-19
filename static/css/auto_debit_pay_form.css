@@ -1,0 +1,54 @@
+body {
+    width: calc(2100px - 508px);
+    height: calc(2970px - 508px);
+    padding: 254px;
+    margin: 0;
+    font-family: 'Noto Serif Korean', serif;
+}
+
+#doc_title {
+    margin: 20px auto 0 auto;
+    width: fit-content;
+    font-size: 80px;
+}
+
+table {
+    border: 2px solid black;
+}
+
+td {
+    border: 2px solid black;
+}
+
+.text_10 {
+    margin: 10px 0 0 0;
+    width: fit-content;
+    font-size: 35px;
+}
+
+.text_9 {
+    margin: 10px 0 0 0;
+    width: fit-content;
+    font-size: calc(35px - 3px);
+}
+
+.text_8 {
+    margin: 10px 0 0 0;
+    width: fit-content;
+    font-size: calc(35px - 6px);
+}
+
+.space_10 {
+    margin: 0;
+    height: calc(35px + 10px);
+}
+
+.space_9 {
+    margin: 0;
+    height: calc(35px - 3px + 10px);
+}
+
+.space_8 {
+    margin: 0;
+    height: calc(35px - 6px + 10px);
+}
