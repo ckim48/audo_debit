@@ -96,10 +96,10 @@
                 <input name="phone_num3" style="width: calc(36% - 4px - 5%);">
             </div>
 <!-- 납부자 이메일 추가 자동이체후원신청서는 있는데 여기는 없어서 추가함 -->
-            <div class="form_block">
-                <h2>회원이메일 (email)</h2>
-                <input name="member_email" placeholder="이메일을 입력해주세요" style="width: calc(100% - 4px);">
-            </div>
+<!--            <div class="form_block">-->
+<!--                <h2>회원이메일 (email)</h2>-->
+<!--                <input name="member_email" placeholder="이메일을 입력해주세요" style="width: calc(100% - 4px);">-->
+<!--            </div>-->
 
             <div class="form_block">
                 <h2>생년월일 (ថ្ងៃខែឆ្នាំកំណើត / Date of Birth)</h2>
@@ -107,59 +107,31 @@
                 <input name="birth_month" placeholder="월/Month" style="width: calc(40% - 4px - 10%); margin-right: calc(10% - 4.5px);">
                 <input name="birth_day" placeholder="일/Day" style="width: calc(30% - 4px - 5%);">
             </div>
-            <div class="form_block">
-                <h2>주소 (address)</h2>
-                <input name="address" placeholder="주소를 입력해주세요" style="width: calc(100% - 4px);">
-            </div>
-            <div class="form_block">
-                <h2>납부유형 (ប្រភេទនៃការបង់ប្រាក់ / Type of Payment)</h2>
-                <input name="payment_type" placeholder="후원금 (ការបរិច្ចាគ/Donation)" style="width: calc(100% - 4px);">
-            </div>
+<!--            <div class="form_block">-->
+<!--                <h2>주소 (address)</h2>-->
+<!--                <input name="address" placeholder="주소를 입력해주세요" style="width: calc(100% - 4px);">-->
+<!--            </div>-->
+<!--            <div class="form_block">-->
+<!--                <h2>납부유형 (ប្រភេទនៃការបង់ប្រាក់ / Type of Payment)</h2>-->
+<!--                <input name="payment_type" placeholder="후원금 (ការបរិច្ចាគ/Donation)" style="width: calc(100% - 4px);">-->
+<!--            </div>-->
 
-            <div class="form_block">
-                <h2>결제정보</h2>
-                <button id="one_time_payment" type="button" class="keep_pressed">일회성 결제 (ការទូទាត់តែម្តង/One-time Payment)</button>
-                <br>
-                <br>
-                <button id="periodic_payment" type="button" class="keep_pressed">정기결제 (ការទូទាត់ទៀងទាត់/Regular Payment)</button>
-            </div>
+<!--            <div class="form_block">-->
+<!--                <h2>결제정보</h2>-->
+<!--                <button id="one_time_payment" type="button" class="keep_pressed">일회성 결제 (ការទូទាត់តែម្តង/One-time Payment)</button>-->
+<!--                <br>제-->
+<!--                <br>-->
+<!--                <button id="periodic_payment" type="button" class="keep_pressed">정기결제 (ការទូទាត់ទៀងទាត់/Regular Payment)</button>-->
+<!--            </div>-->
 
             <div class="form_block">
                 <h2 style="margin-bottom: 0;">결제일 (매월) / កាលបរិច្ឆេទទូទាត់ប្រាក់ / Payment Date (ប្រចាំខែ/Every Month)</h2>
                 <p style="margin-top: 0; font-weight: 100; font-family: system-ui;">*정기 결제 선택시 (On Regular payment)</p>
-                <select id="payment_date" style="width: 100%;">
+                <select id="payment_date" style="width: 100%;" name ="payment_date">
                     <option value="none" selected disabled hidden class="select_default_option">날짜를 선택해주세요 (Select a date)</option>
                     <option value="1일">1일</option>
-                    <option value="2일">2일</option>
-                    <option value="3일">3일</option>
-                    <option value="4일">4일</option>
-                    <option value="5일">5일</option>
-                    <option value="6일">6일</option>
-                    <option value="7일">7일</option>
-                    <option value="8일">8일</option>
-                    <option value="9일">9일</option>
                     <option value="10일">10일</option>
-                    <option value="11일">11일</option>
-                    <option value="12일">12일</option>
-                    <option value="13일">13일</option>
-                    <option value="14일">14일</option>
-                    <option value="15일">15일</option>
-                    <option value="16일">16일</option>
-                    <option value="17일">17일</option>
-                    <option value="18일">18일</option>
-                    <option value="19일">19일</option>
-                    <option value="20일">20일</option>
-                    <option value="21일">21일</option>
-                    <option value="22일">22일</option>
-                    <option value="23일">23일</option>
-                    <option value="24일">24일</option>
                     <option value="25일">25일</option>
-                    <option value="26일">26일</option>
-                    <option value="27일">27일</option>
-                    <option value="28일">28일</option>
-                    <option value="29일">29일</option>
-                    <option value="30일">30일</option>
-                    <option value="31일">31일</option>
                 </select>
             </div>
 <!-- 납부기간 추가 자동이체후원신청서는 있는데 여기는 없어서 추가함 -->

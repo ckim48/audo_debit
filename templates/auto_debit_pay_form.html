@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>-->
-<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Korean">-->
-<!--    <link rel="stylesheet" href="../css/auto_debit_pay_form.css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Korean">
+    <link rel="stylesheet" href="../css/auto_debit_pay_form.css">
     <title>자동이체후원신청서</title>
     <style>
 
     </style>
 </head>
 <body>
-    <p class="text_10" style="margin: 0.10cm auto 0 auto;">후원문의&nbsp;&nbsp;&nbsp;TEL 031-797-2688&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX 05053333940&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail  nhv4825@naver.com</p>
 
-    <p id="doc_title">자동이체후원신청서</p>
+    <p class="doc_title" id="doc_title">자동이체후원신청서</p>
 
     <div class="space_8"></div>
 
@@ -45,7 +44,17 @@
             <td align="center"><p class="text_10">후원금액</p></td>
             <td align="center"><p class="text_10">매월 {{custom_won}}원</p></td>
             <td align="center"><p class="text_10">후원기간</p></td>
-            <td align="center"><p class="text_10">(매월 일)<br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+            {% if payment_date == "1일" %}
+                        <td align="center"><p class="text_10">(매월 <span> &#9745; 1일 &#9744; 10일 &#9744; 25일 </span>)
+                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+            {% elif payment_date == "10일" %}
+                        <td align="center"><p class="text_10">(매월 <span> &#9744; 1일 &#9745; 10일 &#9744; 25일 </span>)
+                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+            {% else %}
+                        <td align="center"><p class="text_10">(매월 <span> &#9744; 1일 &#9744; 10일 &#9745; 25일 </span>)
+                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+            {%endif%}
+
         </tr>
         <tr align="center">
             <td><p class="text_10">금융기관명</p></td>
@@ -57,17 +66,17 @@
             <td><p class="text_10">출금계좌<br>예금주명</p></td>
             <td><p class="text_10">{{account_owner}}</p></td>
             <td><p class="text_10">예금주와의 관계</p></td>
-            <td><p class="text_10">본인</p></td>
+            <td><p class="text_10"></p></td>
         </tr>
         <tr align="center">
             <td><p class="text_10">신청인 주소</p></td>
-            <td colspan=3><p class="text_10">{{address}}</p></td>
+            <td colspan=3><p class="text_10"></p></td>
         </tr>
         <tr align="center">
             <td><p class="text_10">신청인 연락처</p></td>
             <td><p class="text_10">{{phone}}</p></td>
             <td><p class="text_10">신청인 E-mail</p></td>
-            <td><p class="text_10">{{email}}</p></td>
+            <td><p class="text_10"></p></td>
         </tr>
     </table>
 
@@ -139,12 +148,13 @@
         &nbsp;&nbsp;&nbsp;&nbsp; 2. 기존 신청내용을 변경하고자 하는 경우에는 먼저 해지신청을 하고 신규 작성을 하여야 합니다.<br>
         &nbsp;&nbsp;&nbsp;&nbsp; 3. 주계약자와 예금주가 다른 경우 반드시 예금주의 별도 서명을 받아야 합니다.
     </p>
+    <p class="text_10" style="margin: 0.10cm auto 0 auto;">후원문의&nbsp;&nbsp;&nbsp;TEL 031-797-2688&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAX 05053333940&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail  nhv4825@naver.com</p>
 
     <div class="space_10"></div>
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-<!--    <script src="auto_debit_pay_form.js"></script>-->
+    <script src="auto_debit_pay_form.js"></script>
 </body>
 </html>
