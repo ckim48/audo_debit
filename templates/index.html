@@ -111,19 +111,19 @@
 <!--                <h2>주소 (address)</h2>-->
 <!--                <input name="address" placeholder="주소를 입력해주세요" style="width: calc(100% - 4px);">-->
 <!--            </div>-->
-<!--            <div class="form_block">-->
-<!--                <h2>납부유형 (ប្រភេទនៃការបង់ប្រាក់ / Type of Payment)</h2>-->
-<!--                <input name="payment_type" placeholder="후원금 (ការបរិច្ចាគ/Donation)" style="width: calc(100% - 4px);">-->
-<!--            </div>-->
+            <div class="form_block">
+                <h2>납부유형 (ប្រភេទនៃការបង់ប្រាក់ / Type of Payment)</h2>
+                <input name="payment_type" placeholder="후원금 (ការបរិច្ចាគ/Donation)" style="width: calc(100% - 4px);">
+            </div>
 
-<!--            <div class="form_block">-->
-<!--                <h2>결제정보</h2>-->
-<!--                <button id="one_time_payment" type="button" class="keep_pressed">일회성 결제 (ការទូទាត់តែម្តង/One-time Payment)</button>-->
-<!--                <br>제-->
-<!--                <br>-->
-<!--                <button id="periodic_payment" type="button" class="keep_pressed">정기결제 (ការទូទាត់ទៀងទាត់/Regular Payment)</button>-->
-<!--            </div>-->
-
+            <div class="form_block">
+                <h2>결제정보</h2>
+                <button id="periodic_payment" type="button" class="keep_pressed">정기결제 (ការទូទាត់ទៀងទាត់/Regular Payment)</button>
+            </div>
+            <div class="form_block">
+                <h2>결제수단 (Payment Method)</h2>
+                <button id="payment_method" type="button" class="keep_pressed">자동이체 (ការផ្ទេរប្រាក់ដោយស្វ័យប្រវត្តិ/Automatic Transfer)</button>
+            </div>
             <div class="form_block">
                 <h2 style="margin-bottom: 0;">결제일 (매월) / កាលបរិច្ឆេទទូទាត់ប្រាក់ / Payment Date (ប្រចាំខែ/Every Month)</h2>
                 <p style="margin-top: 0; font-weight: 100; font-family: system-ui;">*정기 결제 선택시 (On Regular payment)</p>
@@ -141,10 +141,7 @@
                 <input name="Payment_yyyymmdd2" style="width: calc(36% - 4px - 5%);">
             </div>
 
-            <div class="form_block">
-                <h2>결제수단 (Payment Method)</h2>
-                <button id="payment_method" type="button" class="keep_pressed">자동이체 (ការផ្ទេរប្រាក់ដោយស្វ័យប្រវត្តិ/Automatic Transfer)</button>
-            </div>
+
 
             <div class="form_block">
                 <h2>은행 (មោះធនាគារ / Bank)</h2>
@@ -166,8 +163,15 @@
                     <option value="기업은행">기업은행</option>
                     <option value="농협">농협</option>
                     <option value="수협">수협</option>
+                    <option value="신협">신협</option>
                     <option value="한국산업은행">한국산업은행</option>
-                    <option value="한국수출입은행">한국수출입은행</option>
+                    <option value="우체국">우체국</option>
+                    <option value="새마을금고">새마을금고</option>
+<option value="토스뱅크">토스뱅크</option>
+                    <option value="카카오뱅크">카카오뱅크</option>
+
+                    <option value="케이뱅크">케이뱅크</option>
+
                 </select>
             </div>
 
