@@ -111,13 +111,12 @@ def index():
         phone3 = request.form.get("phone_num3")
         phone = str(phone1) + "-" + str(phone2) + "-" + str(phone3)
         # email = request.form.get("member_email")
-        birth_year = request.form.get("birth_year")
-        birth_month = request.form.get("birth_month")
-        birth_day = request.form.get("birth_day")
-        try:
-            birth = str(birth_year[2:])+str(birth_month)+str(birth_day)
-        except TypeError:
-            birth = "20210101"
+        birth = request.form.get("birth")
+
+        # try:
+        #     birth = str(birth[]2:])+str(birth_month)+str(birth_day)
+        # except TypeError:
+        #     birth = "20210101"
 
         payment_type = request.form.get('payment_type')
         # payment_yyyymmdd1 = request.form.get('Payment_yyyymmdd1')
@@ -154,9 +153,6 @@ def index():
                                         current_year = current_year,
                                         current_month =  current_month,
                                         current_day = current_day,
-                                        birth_year=birth_year,
-                                        birth_day=birth_day,
-                                        birth_month=birth_month,
                                         birth=birth,
                                         payment_type=payment_type,
                                         # payment_yyyymmdd1=payment_yyyymmdd1,
