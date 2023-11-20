@@ -169,7 +169,7 @@ $("#submit_button").on("click", function(){
     var dataURL = canvas.toDataURL("image/png");
 
     if( name == "" || phone_num1 == "" || phone_num2 == "" || phone_num3 == "" || birth_year == "" || birth_month == "" ||
-        birth_day == "" || payment_type == "" || payment_info == "" || (payment_info == "정기결제" && payment_date == "날짜를 선택해주세요") ||
+        birth_day == "" ||  (payment_info == "정기결제" && payment_date == "날짜를 선택해주세요") ||
         payment_method == "" || bank == "은행을 선택해주세요" || account_owner == "" || account_num == "" || payment_ammount == "") {
         alert("모든 문항을 완료하였는지 확인해주세요.");
         return;
