@@ -110,7 +110,7 @@ def index():
         phone2 = request.form.get("phone_num2")
         phone3 = request.form.get("phone_num3")
         phone = str(phone1) + "-" + str(phone2) + "-" + str(phone3)
-        email = request.form.get("member_email")
+        # email = request.form.get("member_email")
         birth_year = request.form.get("birth_year")
         birth_month = request.form.get("birth_month")
         birth_day = request.form.get("birth_day")
@@ -120,7 +120,6 @@ def index():
             birth = "20210101"
 
         payment_type = request.form.get('payment_type')
-        payment_date = request.form.get('payment_date')
         payment_yyyymmdd1 = request.form.get('Payment_yyyymmdd1')
         payment_yyyymmdd2 = request.form.get('Payment_yyyymmdd2')
         agreement1 = request.form.get('agreement1')
@@ -129,9 +128,9 @@ def index():
         account_num = request.form.get('account_num')
         custom_won = request.form.get('custom_won')
         canvas_image_data = request.form.get('canvas_image_data')
-        address = request.form.get('address')
+        # address = request.form.get('address')
         current_date = datetime.now()
-        current_year = str(current_date.year)[-2:]
+        current_year = str(current_date.year)
         current_month = str(current_date.month).zfill(2)
         current_day = str(current_date.day).zfill(2)
 
@@ -141,14 +140,14 @@ def index():
         current_month = current_date.month
         current_day = current_date.day
         image_path = 'static/saved_image.png'
-
+        payment_date = request.form.get('payment_date')
         with open(image_path, 'rb') as img_file:
             img_data = img_file.read()
             image_data = base64.b64encode(img_data).decode('utf-8')
         rendered_html = render_template('auto_debit_pay_form.html',
                                         name=name,
                                         phone=phone,
-                                        email=email,
+                                        payment_date= payment_date,
                                         image_data = image_data,
                                         bank_name = selected_bank,
                                         formatted_date = formatted_date,
@@ -160,12 +159,10 @@ def index():
                                         birth_month=birth_month,
                                         birth=birth,
                                         payment_type=payment_type,
-                                        payment_date=payment_date,
                                         payment_yyyymmdd1=payment_yyyymmdd1,
                                         payment_yyyymmdd2=payment_yyyymmdd2,
                                         agreement1=agreement1,
                                         agreement2=agreement2,
-                                        address = address,
                                         account_owner=account_owner,
                                         account_num=account_num,
                                         custom_won=custom_won,
@@ -198,17 +195,21 @@ def index():
                 padding: 8px;
             }
             @page {
-                margin: 8mm; /* Set margin for the entire page */
+                margin: 4mm; /* Set margin for the entire page */
             }
             body {
                 font-size: 10px;
+            }
+            .doc_title{
+                font-size: 20px;
+                text-align: center;
             }
         """
         HTML(string=rendered_html).write_pdf(pdf_filename, stylesheets=[CSS(string=custom_css)])
         # pdf_path = f"./{pdf_filename}"
         # with open(pdf_path, 'wb') as f:
         #     f.write(pdf_data)
-        send_email(pdf_filename, email)
+        # send_email(pdf_filename, email두)
         store = file.Storage('storage.json')
         creds = store.get
         upload_to_drive(pdf_filename)
