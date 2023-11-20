@@ -204,6 +204,9 @@ def index():
                 font-size: 20px;
                 text-align: center;
             }
+            .doc_center{
+                text-align: center;
+            }
         """
         HTML(string=rendered_html).write_pdf(pdf_filename, stylesheets=[CSS(string=custom_css)])
         # pdf_path = f"./{pdf_filename}"
