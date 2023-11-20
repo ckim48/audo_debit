@@ -25,16 +25,19 @@ header {
     left: 10vw;
     width: 25vw;
     min-width: 250px;
-    height: 60vh;
+    height: 65vh;
     min-height: 300px;
     padding-top: 5vh;
     padding-left: 4vw;
     padding-right: 4vw;
     background-color: white;
 }
-
+#custom_won_input {
+    visibility: hidden;
+}
 #deco1 {
     width: 3vw;
+    margin-top: 15px;
     background-color: black;
     height: 1px;
 }
@@ -51,7 +54,7 @@ header {
 #site_title {
     margin: 0;
     font-family: system-ui;
-    font-size: max(1.3vw, 16px);
+    font-size: max(0.9vw, 13px);
 }
 
 #site_title h1 {
