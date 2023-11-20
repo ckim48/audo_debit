@@ -120,8 +120,8 @@ def index():
             birth = "20210101"
 
         payment_type = request.form.get('payment_type')
-        payment_yyyymmdd1 = request.form.get('Payment_yyyymmdd1')
-        payment_yyyymmdd2 = request.form.get('Payment_yyyymmdd2')
+        # payment_yyyymmdd1 = request.form.get('Payment_yyyymmdd1')
+        # payment_yyyymmdd2 = request.form.get('Payment_yyyymmdd2')
         agreement1 = request.form.get('agreement1')
         agreement2 = request.form.get('agreement2')
         account_owner = request.form.get('account_owner')
@@ -159,8 +159,8 @@ def index():
                                         birth_month=birth_month,
                                         birth=birth,
                                         payment_type=payment_type,
-                                        payment_yyyymmdd1=payment_yyyymmdd1,
-                                        payment_yyyymmdd2=payment_yyyymmdd2,
+                                        # payment_yyyymmdd1=payment_yyyymmdd1,
+                                        # payment_yyyymmdd2=payment_yyyymmdd2,
                                         agreement1=agreement1,
                                         agreement2=agreement2,
                                         account_owner=account_owner,
