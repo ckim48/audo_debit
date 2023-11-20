@@ -20,7 +20,7 @@
             </div>
 
             <div id="site_title">
-                <h1>멤버쉽 가입 및 정기후원 신청서</h1>
+                <h1>멤버쉽 가입 및 정기후원 신청서 (ការចុះឈ្មោះជាសមាជិក និងទម្រង់ពាក្យសុំឧបត្ថម្ភជាប្រចាំ) </h1>
             </div>
 
             <div id="site_title_subtext">
@@ -53,7 +53,7 @@
                     FAX : 031-797-3940
                 </p>
                 <p>
-                    nhv4825@yahoo.co.kr
+                    nhv4825@gmail.com
                     <br>
                     대표자 : 안대환
                 </p>
@@ -78,7 +78,7 @@
 
             <div class="form_block">
                 <h2>회원명 (ឈ្មោះសមាជិក / name)</h2>
-                <input name="name" placeholder="이름을 입력해주세요" style="width: calc(100% - 4px);">
+                <input name="name" placehol년der="이름을 입력해주세요" style="width: calc(100% - 4px);">
             </div>
 
             <!--
@@ -91,6 +91,7 @@
             -->
 <div class="form_block">
     <h2>휴대전화 (ទូរស័ព្ទចល័ត / Phone number)</h2>
+
     <input name="phone_num1" style="width: calc(25% - 4px - 8%); margin-right: calc(15% - 6px);" value="010">
     <input name="phone_num2" style="width: calc(33% - 4px - 6.5%); margin-right: calc(15% - 6px);">
     <input name="phone_num3" style="width: calc(33% - 4px - 6.5%);">
@@ -98,9 +99,11 @@
 
 <div class="form_block">
     <h2>생년월일 (ថ្ងៃខែឆ្នាំកំណើត / Date of Birth)</h2>
-    <input name="birth_year" placeholder="년도/Year" style="width: calc(27% - 4px - 6.5%); margin-right: calc(15% - 1.5px);">
-    <input name="birth_month" placeholder="월/Month" style="width: calc(36% - 4px - 8.5%); margin-right: calc(15% - 1.5px);">
-    <input name="birth_day" placeholder="일/Day" style="width: calc(27% - 4px - 6.5%);">
+    <input name="birth" placeholder="생년월일을 입력해주세요(YYMMDD) ex) 971212" style="width: calc(100% - 4px);">
+
+<!--    <input name="birth_year" placeholder="년도/Year" style="width: calc(27% - 4px - 6.5%); margin-right: calc(15% - 1.5px);">-->
+<!--    <input name="birth_month" placeholder="월/Month" style="width: calc(36% - 4px - 8.5%); margin-right: calc(15% - 1.5px);">-->
+<!--    <input name="birth_day" placeholder="일/Day" style="width: calc(27% - 4px - 6.5%);">-->
 </div>
 <!--            <div class="form_block">-->
 <!--                <h2>주소 (address)</h2>-->
@@ -173,21 +176,18 @@
             <div class="form_block">
                 <h2 style="margin-bottom: 0;">결제일 (매월) / កាលបរិច្ឆេទទូទាត់ប្រាក់ / Payment Date (ប្រចាំខែ/Every Month)</h2>
                 <p style="margin-top: 0; font-weight: 100; font-family: system-ui;">*정기 결제 선택시 (On Regular payment)</p>
-                <select id="payment_date" style="width: 100%;" name ="payment_date">
-                    <option value="none" selected disabled hidden class="select_default_option">날짜를 선택해주세요 (Select a date)</option>
-                    <option value="1일">1일</option>
-                    <option value="10일">10일</option>
-                    <option value="25일">25일</option>
-                </select>
+
+                <button name ="payment_date" type="button" class="keep_pressed" value="25일">25일</button>
+
             </div>
             <div class="form_block">
                 <h2>결제금액 (ចំនួនទឹកប្រាក់នៃការទូទាត់ / Amount of Money)</h2>
-
-              <button id="2k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%); margin-right: calc(7% - 8px);"onclick="setCustomWonValue('2000')">2,000원</button>
                 <button id="10k_won" type="button" class="keep_pressed" style="width: calc(34% - 5%); margin-right: calc(7% - 8px);"onclick="setCustomWonValue('10000')">10,000원</button>
-                <button id="50k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%);"onclick="setCustomWonValue('50000')">50,000원</button>
 
-<input name="custom_won" id="custom_won_input" placeholder="기타 금액 (원)" style="width: calc(100% - 4px); margin-top: 20px; border-color: rgb(89, 232, 89);">
+              <button id="2k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%); margin-right: calc(7% - 8px);"onclick="setCustomWonValue('20000')">2,0000원</button>
+                <button id="50k_won" type="button" class="keep_pressed" style="width: calc(33% - 5%);"onclick="setCustomWonValue('50000')">50,000원</button>
+<input name="custom_won" id="custom_won_input">
+
             </div>
 
             <div class="form_block">
