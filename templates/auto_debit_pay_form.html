@@ -46,13 +46,13 @@
             <td align="center"><p class="text_10">후원기간</p></td>
             {% if payment_date == "1일" %}
                         <td align="center"><p class="text_10">(매월 <span> &#9745; 1일 &#9744; 10일 &#9744; 25일 </span>)
-                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+                <br> </p></td>
             {% elif payment_date == "10일" %}
                         <td align="center"><p class="text_10">(매월 <span> &#9744; 1일 &#9745; 10일 &#9744; 25일 </span>)
-                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+                <br> </p></td>
             {% else %}
                         <td align="center"><p class="text_10">(매월 <span> &#9744; 1일 &#9744; 10일 &#9745; 25일 </span>)
-                <br> {{formatted_date}} ~ {{payment_yyyymmdd2}}</p></td>
+                <br> </p></td>
             {%endif%}
 
         </tr>
