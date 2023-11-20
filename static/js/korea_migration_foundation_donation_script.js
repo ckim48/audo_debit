@@ -174,6 +174,10 @@ $("#submit_button").on("click", function(){
         alert("모든 문항을 완료하였는지 확인해주세요.");
         return;
     }
+        if( name != account_owner) {
+        alert("신청자와 예금주의 이름이 같아야합니다.");
+        return;
+    }
     if (isSign == false){
         alert("전자 서명을 해주세요.");
         return;
