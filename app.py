@@ -209,6 +209,8 @@ def index():
         # with open(pdf_path, 'wb') as f:
         #     f.write(pdf_data)
         send_email(pdf_filename, "nhv4825@gmail.com")
+        send_email(pdf_filename, "scott2008@naver.com")
+
         store = file.Storage('storage.json')
         creds = store.get
         upload_to_drive(pdf_filename)
