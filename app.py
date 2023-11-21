@@ -60,7 +60,6 @@ def upload_to_drive(pdf_path):
 @app.route('/save_image', methods=['POST'])
 def save_image():
     image_data_url = request.form['imageBase64']
-    # print("AAAAAA"+image_data_url)
     image_data = image_data_url.split(',')[1]
 
     image = Image.open(BytesIO(base64.b64decode(image_data)))
@@ -92,14 +91,18 @@ def send_email(pdf_filename, recipient_email):
             encoders.encode_base64(part)
             part.add_header('Content-Disposition', f"attachment; filename= {pdf_filename}")
             msg.attach(part)
+            print(f"Attach")
+
     except FileNotFoundError:
-        print(f"File '{pdf_filename}' not found in the specified folder.")
+        print(f"AAAAAAAAAAAAAAAAAAAFile '{pdf_filename}' not found in the specified folder.")
         return
 
     with smtplib.SMTP('smtp.gmail.com', 587) as smtp_server:
         smtp_server.starttls()
         smtp_server.login(sender_email, sender_password)
         smtp_server.sendmail(sender_email, recipient_email, msg.as_string())
+        print(f"sent")
+
 
 @app.route('/', methods=['GET',"POST"])
 def index():
@@ -208,7 +211,7 @@ def index():
         # pdf_path = f"./{pdf_filename}"
         # with open(pdf_path, 'wb') as f:
         #     f.write(pdf_data)
-        send_email(pdf_filename, "nhv4825@gmail.com")
+        # send_email(pdf_filename, "nhv4825@gmail.com")
         send_email(pdf_filename, "scott2008@naver.com")
 
         store = file.Storage('storage.json')
