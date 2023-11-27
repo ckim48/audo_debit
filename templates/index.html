@@ -256,6 +256,17 @@
     </script>
     <script src="../static/js/korea_migration_foundation_donation_script.js"></script>
 <script>
+    var button = document.getElementById('periodic_payment');
+    var button2 = document.getElementById('payment_method');
+      var button3 = document.getElementById('payment_date');
+
+
+    function clickButton() {
+        button.click();
+        button2.click();
+        button3.click();
+    }
+    window.onload = clickButton;
 </script>
 </body>
 </html>
