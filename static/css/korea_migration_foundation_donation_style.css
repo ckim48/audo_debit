@@ -103,6 +103,9 @@ section {
     .sidebar {
         display: none;
     }
+    .keep_pressed{
+    height:80px;
+    }
 }
 
 #sticky_container {
